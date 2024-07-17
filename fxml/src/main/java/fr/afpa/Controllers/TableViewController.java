@@ -31,19 +31,6 @@ public class TableViewController implements Initializable {
     private ObservableList<Person> persons = FXCollections.observableArrayList(); 
 
     @FXML 
-    public void initialize(URL location, ResourceBundle resources) {
-        columnFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        columnLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        columnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
-
-        persons.add(new Person("Josh", "Homme", "Joshua Tree"));
-        persons.add(new Person("Dave", "Grohl", "Warren"));
-        persons.add(new Person("Robert", "Trujillo", "Santa Monica"));
-
-        personTable.setItems(persons);
-    }
-
-    @FXML 
     private void save(ActionEvent event) { 
         String fName = firstName.getText();
         String lName = lastName.getText();
@@ -70,5 +57,18 @@ public class TableViewController implements Initializable {
         if (selectedPerson != null) {
             persons.remove(selectedPerson);
         }
+    }
+
+    @FXML 
+    public void initialize(URL location, ResourceBundle resources) {
+        columnFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        columnLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        columnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+
+        persons.add(new Person("Josh", "Homme", "Joshua Tree"));
+        persons.add(new Person("Dave", "Grohl", "Warren"));
+        persons.add(new Person("Robert", "Trujillo", "Santa Monica"));
+
+        personTable.setItems(persons);
     }
 }
