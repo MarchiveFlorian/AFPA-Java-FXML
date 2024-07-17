@@ -11,14 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.afpa.Controllers.TableViewController">
    <center>
       <TableView prefHeight="383.0" prefWidth="194.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="160.0" text="Prénom" />
-          <TableColumn minWidth="0.0" prefWidth="160.0" text="Nom" />
-            <TableColumn prefWidth="160.0" text="Ville" />
+          <TableColumn fx:id="columnFirstName" prefWidth="160.0" text="Prénom" />
+          <TableColumn fx:id="columnLastName" minWidth="0.0" prefWidth="160.0" text="Nom" />
+            <TableColumn fx:id="columnCity" prefWidth="160.0" text="Ville" />
         </columns>
       </TableView>
    </center>
@@ -40,7 +39,7 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </Label>
-            <TextField promptText="Prénom...">
+            <TextField fx:id="firstName" promptText="Prénom...">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>
@@ -50,7 +49,7 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </Label>
-            <TextField promptText="Nom...">
+            <TextField fx:id="lastName" promptText="Nom...">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>
@@ -60,18 +59,18 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </Label>
-            <TextField promptText="Ville...">
+            <TextField fx:id="city" promptText="Ville...">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>
             </TextField>
             <HBox alignment="CENTER" prefHeight="48.0" prefWidth="287.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Sauver" />
-                  <Button mnemonicParsing="false" text="Annuler" />
+                  <Button fx:id="save" mnemonicParsing="false" onAction="#save" text="Sauver" />
+                  <Button fx:id="cancel" mnemonicParsing="false" onAction="#cancel" text="Annuler" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Supprimer">
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" text="Supprimer">
                <VBox.margin>
                   <Insets left="45.0" />
                </VBox.margin>
