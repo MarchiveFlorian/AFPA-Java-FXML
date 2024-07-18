@@ -59,11 +59,11 @@ public class TableViewController implements Initializable {
         }
     }
 
-    @FXML 
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
-        columnFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        columnLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        columnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+        columnFirstName.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+        columnLastName.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+        columnCity.setCellValueFactory(cellData -> cellData.getValue().cityProperty());
 
         persons.add(new Person("Josh", "Homme", "Joshua Tree"));
         persons.add(new Person("Dave", "Grohl", "Warren"));

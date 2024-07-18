@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="645.0" type="BorderPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.afpa.Controllers.TableViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.afpa.Controllers.TableViewController">
    <center>
-      <TableView prefHeight="383.0" prefWidth="194.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="personTable" prefHeight="383.0" prefWidth="194.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="columnFirstName" prefWidth="160.0" text="Prénom" />
           <TableColumn fx:id="columnLastName" minWidth="0.0" prefWidth="160.0" text="Nom" />
-            <TableColumn fx:id="columnCity" prefWidth="160.0" text="Ville" />
+          <TableColumn fx:id="columnCity" prefWidth="160.0" text="Ville" />
         </columns>
       </TableView>
    </center>
@@ -78,4 +78,4 @@
          </children>
       </VBox>
    </right>
-</fx:root>
+</BorderPane>
